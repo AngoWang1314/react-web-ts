@@ -1,0 +1,13 @@
+import { useState, useEffect, useCallback, useRef } from 'react';
+
+export default () => {
+  const [rect, setRect] = useState(null);
+
+  const ref = useCallback(node => {
+    if (node !== null) {
+      setRect(node.getBoundingClientRect());
+    }
+  }, []);
+
+  return [rect, ref];
+};
