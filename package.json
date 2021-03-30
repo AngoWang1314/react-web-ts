@@ -112,7 +112,7 @@
     "vendor": "webpack --config config/webpack.config.dll.js",
     "start-storybook": "start-storybook -p 9000",
     "build-storybook": "build-storybook -o build/storybook",
-    "eslint": "eslint src"
+    "eslint": "eslint src --cache"
   },
   "pre-commit": [
     "eslint"
