@@ -1,11 +1,11 @@
 import { useEffect, useCallback, useRef } from 'react';
 
-const useDebounce = (fn: Function, delay: number, dep: Array<any> = []) => {
+const useDebounce = (fn: Function, delay: number) => {
   const { current } = useRef({ fn, timer: 0 });
 
   useEffect(() => {
     current.fn = fn;
-  }, [fn]);
+  }, [current, fn]);
 
   return useCallback((...args) => {
     if (current.timer) {
@@ -15,7 +15,7 @@ const useDebounce = (fn: Function, delay: number, dep: Array<any> = []) => {
     current.timer = window.setTimeout(() => {
       current.fn.call(this, ...args);
     }, delay);
-  }, dep);
+  }, [current, delay]);
 };
 
 export default useDebounce;

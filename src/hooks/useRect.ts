@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useCallback } from 'react';
 
 const useRect = () => {
   const [rect, setRect] = useState(null);

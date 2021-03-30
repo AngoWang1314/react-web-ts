@@ -1,5 +1,5 @@
 import { observable, action, runInAction } from 'mobx';
-import { getList, postItem } from '@/apis/Item';
+import { getList/*, postItem*/ } from '@/apis/Item';
 
 class Item {
   @observable

@@ -39,7 +39,7 @@ class Login extends Component<ILogin> {
   }
 
   render() {
-    const { history, location, match, Item } = this.props;
+    const { /*history, location, match, */Item } = this.props;
     const { list } = Item;
 
     return (
