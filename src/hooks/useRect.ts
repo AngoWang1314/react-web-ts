@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-export default () => {
+const useRect = () => {
   const [rect, setRect] = useState(null);
 
   const ref = useCallback(node => {
@@ -11,3 +11,5 @@ export default () => {
 
   return [rect, ref];
 };
+
+export default useRect;

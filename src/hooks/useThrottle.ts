@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react';
 
-export default (fn: Function, delay: number, dep: Array<any> = []) => {
+const useThrottle = (fn: Function, delay: number, dep: Array<any> = []) => {
   const { current } = useRef({ fn, timer: 0 });
 
   useCallback(() => {
@@ -17,3 +17,5 @@ export default (fn: Function, delay: number, dep: Array<any> = []) => {
     }
   }, dep);
 };
+
+export default useThrottle;

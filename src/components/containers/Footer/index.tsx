@@ -4,7 +4,7 @@ import { VisibilityFilters } from '@/stores/redux/action';
 import { Dispatch } from 'redux';
 import { setVisibilityFilter } from '@/stores/redux/action';
 import { connect } from 'react-redux';
-import { useHistory, useLocation, useParams, useRouteMatch } from 'react-router-dom';
+import { /*useHistory, useLocation, */useParams/*, useRouteMatch*/ } from 'react-router-dom';
 
 interface IProps {
     dispatch: Dispatch,
@@ -17,9 +17,12 @@ const Footer: React.FC<IProps> = (props: IProps) => {
         visibilityFilter: string
     } = useParams();
 
+    const { dispatch } = props;
+    const { visibilityFilter } = params;
+
     useEffect(() => {
-        props.dispatch(setVisibilityFilter(params.visibilityFilter));
-    }, [params.visibilityFilter, props.dispatch]);
+        dispatch(setVisibilityFilter(visibilityFilter));
+    }, [dispatch, visibilityFilter]);
 
     return (
         <div>
