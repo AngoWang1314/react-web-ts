@@ -119,7 +119,7 @@
     }
   },
   "lint-staged": {
-    "src": "eslint --fix"
+    "src/**/*.{js,ts,tsx}": ["prettier --write", "eslint --cache --fix", "git add"]
   },
   "eslintConfig": {
     "extends": [

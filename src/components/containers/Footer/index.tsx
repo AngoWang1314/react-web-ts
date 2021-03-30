@@ -34,4 +34,4 @@ const Footer: React.FC<IProps> = (props: IProps) => {
     );
 };
 
-export default connect()(Footer);
+export default connect()(Footer)
