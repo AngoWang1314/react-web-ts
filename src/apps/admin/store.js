@@ -1,7 +1,7 @@
-import Item from '@/stores/mymobx';
+import { login } from '@/stores/mymobx';
 
 let store = {
-    Item
+    login
 };
 
 export default store;

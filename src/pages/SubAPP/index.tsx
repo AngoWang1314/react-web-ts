@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import importHTML from 'import-html-entry';
 
-export interface ISubAPP {
-}
+interface ISubAPP {
+};
 
 const SubAPP: React.FC<ISubAPP> = (props: ISubAPP) => {
   useEffect(() => {

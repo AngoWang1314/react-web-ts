@@ -1,5 +1,5 @@
 import { getTodos, toggleTodo } from '@/stores/redux/action';
-import TodoList from '@/components/containers/TodoList';
+import List from '@/pages/TodoList/List';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -8,7 +8,7 @@ interface ITodo {
     id: number,
     text: string,
     completed: boolean,
-}
+};
 interface IMapStateToProps {
     todos: ITodo[],
     visibilityFilter: string
@@ -44,4 +44,4 @@ const mapDispatchToProps = (dispatch: Dispatch): {dispatch: Dispatch, getTodos: 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(TodoList);
+)(List);

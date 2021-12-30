@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import FilterLink from '@/components/containers/FilterLink';
+import FilterLink from '@/pages/TodoList/FilterLink';
 import { VisibilityFilters } from '@/stores/redux/action';
 import { Dispatch } from 'redux';
 import { setVisibilityFilter } from '@/stores/redux/action';

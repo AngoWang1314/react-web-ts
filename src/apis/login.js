@@ -1,4 +1,4 @@
-import { get, post/*, all, spread*/ } from '@/utils/axios';
+import { get, post, all, spread } from '@/utils/axios';
 
 export async function getList(args = {}) {
   const url = 'https://cnodejs.org/api/v1/topics';

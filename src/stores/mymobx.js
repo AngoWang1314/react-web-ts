@@ -1,24 +1,5 @@
-import { observable, action, runInAction } from 'mobx';
-import { getList/*, postItem*/ } from '@/apis/Item';
+import login from './mobx/login';
 
-class Item {
-  @observable
-  list = [];
-
-  @action
-  actionGetList = async(params, onSuccess, onError) => {
-    try {
-      const ret = await getList(params);
-
-      runInAction(() => {
-        this.list = ret.data;
-      });
-
-      onSuccess && onSuccess(ret.data);
-    } catch (error) {
-      onError && onError(error);
-    }
-  }
-}
-
-export default new Item();
+export {
+    login
+};

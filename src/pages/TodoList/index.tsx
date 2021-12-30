@@ -1,7 +1,7 @@
 import React from 'react';
-import Footer from '@/components/containers/Footer';
-import AddTodo from '@/components/containers/AddTodo';
-import VisibleTodoList from '@/components/containers/VisibleTodoList';
+import Footer from '@/pages/TodoList/Footer';
+import AddTodo from '@/pages/TodoList/AddTodo';
+import VisibleList from '@/pages/TodoList/VisibleList';
 
 interface IProps {
     match: {
@@ -17,7 +17,7 @@ const TodoList: React.FC<IProps> = (props: IProps) => {
     return (
         <div>
             <AddTodo />
-            <VisibleTodoList />
+            <VisibleList />
             <Footer />
         </div>
     );

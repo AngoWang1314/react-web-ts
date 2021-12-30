@@ -3,7 +3,7 @@ import loadable from '@loadable/component';
 
 import styles from './App.module.less';
 
-import RenderRoute from '@/components/presentations/RenderRoute';
+import RenderRoute from '@/components/RenderRoute';
 const SubAPP = loadable(() => import('@/pages/SubAPP'));
 const Login = loadable(() => import('@/pages/Login'));
 const Main = loadable(() => import('@/pages/Main'));
@@ -44,8 +44,8 @@ const routes = [
 ];
 const defaultRoute = '/login';
 
-export interface IApp {
-}
+interface IApp {
+};
 const App: React.FC<IApp> = (props: IApp) => {
   return (
     <div className={styles.App}>

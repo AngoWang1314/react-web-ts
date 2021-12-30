@@ -1,61 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import {inject, observer} from 'mobx-react';
-
-import { Button } from 'antd';
+import { inject, observer } from 'mobx-react';
+import { message } from 'antd';
+import styles from './index.module.less';
 
 interface ILogin extends RouteComponentProps {
-  Item: {
-    actionGetList: Function,
-    list: {
-      author: {
-        loginname: string,
-        avatar_url: string
-      },
-      author_id: string,
-      content: string,
-      create_at: string,
-      good: boolean,
-      id: string,
-      last_reply_at: string,
-      reply_count: number,
-      tab: string,
-      title: string,
-      top: boolean,
-      visit_count: number
-    }[]
-  }
-}
+    login: {
+        username: string,
+        password: string,
+        list: [],
+        actionGetList: (params: any, callbacklist: any, callbackerror: any) => void,
+    }
+};
 
-@inject('Item')
-@observer
-class Login extends Component<ILogin> {
-  state = {
-    name: 'Login'
-  }
+const Login: React.FC<ILogin> = ({ history, location, match, login }: ILogin) => {
+    const [list, setList] = useState(login.list);
 
-  componentDidMount() {
-    this.props.Item.actionGetList();
-  }
-
-  render() {
-    const { /*history, location, match, */Item } = this.props;
-    const { list } = Item;
+    useEffect(() => {
+        login.actionGetList({
+        }, (list: any) => {
+            setList(list);
+        }, (ret: any) => {
+            message.warning('登录失败');
+        });
+    });
 
     return (
-      <div>
-        <Button type="primary">button</Button>
-        <div>{this.state.name}</div>
-        {
-          list.map((item, index: number) => {
-            return (
-              <div key={index}>{item.title}</div>
-            );
-          })
-        }
-      </div>
+        <div className={styles.login}>
+            {
+                list.map((item: any, index: number) => {
+                    return (
+                        <div key={index} className={styles.item}>{item.title}</div>
+                    );
+                })
+            }
+        </div>
     );
-  }
-}
+};
 
-export default Login;
+export default inject('login')(observer(Login));

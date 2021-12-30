@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setVisibilityFilter } from '@/stores/redux/action';
-import Link from '@/components/presentations/Link';
+import Link from '@/components/Link';
 import { Dispatch } from 'redux';
 import React from 'react';
 

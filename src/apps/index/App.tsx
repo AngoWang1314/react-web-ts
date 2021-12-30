@@ -3,7 +3,7 @@ import loadable from '@loadable/component';
 
 import styles from './App.module.less';
 
-import RenderRoute from '@/components/presentations/RenderRoute';
+import RenderRoute from '@/components/RenderRoute';
 const Child = loadable(() => import('@/pages/Child'));
 const TodoList = loadable(() => import('@/pages/TodoList'));
 const routes = [
@@ -26,8 +26,8 @@ const routes = [
 ];
 const defaultRoute = '/subapp/x/y/child';
 
-export interface IApp {
-}
+interface IApp {
+};
 const App: React.FC<IApp> = (props: IApp) => {
   return (
     <div className={styles.App}>

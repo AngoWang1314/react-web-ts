@@ -1,5 +1,5 @@
 import React, { /*useState, useReducer, useContext*/ } from 'react';
-import Todo from '@/components/presentations/Todo';
+import Todo from '@/components/Todo';
 import useFirstMounted from '@/hooks/useFirstMounted';
 import { Dispatch } from 'redux';
 
